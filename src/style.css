@@ -1,1 +1,140 @@
- 
+body {
+  /* background: #f9f7fe; */
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: #032f75;
+  font-weight: bold;
+}
+a:hover {
+  color: #419eeb;
+}
+.weather-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  max-width: 600px;
+  height: 900px;
+  margin: 45px auto;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  background-image: url("https://www.dundalkdemocrat.ie/resizer/800/-1/true/1655454596935.jpg--monday_s_weather_forecast_for_louth.jpg?1655454610151");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 30px;
+}
+
+.search-input {
+  background-color: #f9f7fe;
+  border: none;
+  color: rgba(10, 9, 17, 0.4);
+  font-size: 16px;
+  padding: 20px;
+  width: 75%;
+  border-radius: 6px;
+  width: 80%;
+}
+
+.search-button {
+  margin-left: 24px;
+  font-size: 16px;
+  background-color: #419eeb;
+  color: white;
+  border: none;
+  padding: 20px;
+  line-height: 1;
+  border-radius: 5px;
+}
+.search-button:hover {
+  background-color: #5fb1f5;
+}
+
+main {
+  padding: 30px 0;
+}
+
+.current-weather {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.current-city {
+  font-size: 38px;
+  font-weight: 900;
+  color: #022151;
+  margin: 0;
+}
+.current-details {
+  color: rgba(41, 27, 56, 0.7);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.current-details strong {
+  color: rgb(126, 3, 40);
+  font-weight: bold;
+}
+
+.current-temperature-icon-box {
+  display: flex;
+}
+.current-temperature-icon {
+  width: 88px;
+  height: 88px;
+}
+.current-temperature-value {
+  font-size: 88px;
+  line-height: 88px;
+  font-weight: bold;
+  color: #022151;
+}
+
+.current-temperature-unit {
+  margin-top: 6px;
+  font-size: 28px;
+  color: #022151;
+}
+
+footer {
+  border-top: 1px solid #f9f7fe;
+  text-align: center;
+  padding-top: 15px;
+
+  color: rgba(41, 27, 56, 0.7);
+}
+
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 10px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.forecast-day {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+}
+
+.forecast-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.forecast-temp {
+  color: rgb(126, 3, 40);
+}
