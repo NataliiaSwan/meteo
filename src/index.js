@@ -1,21 +1,3 @@
-function search(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let city = searchInputElement.value;
-  console.log("Searching for city:", city);
-
-  let apiKey = "1t7b4ado35ccfb0c2c30ac5eb63faeaa";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  console.log("API URL:", apiUrl);
-
-  axios
-    .get(apiUrl)
-    .then(displayTemperature)
-    .catch(function (error) {});
-
-  getForecast(city);
-}
-
 function displayTemperature(response) {
   let temperature = Math.round(response.data.temperature.current);
   let cityName = response.data.city;
@@ -31,7 +13,6 @@ function displayTemperature(response) {
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-temperature-icon" />`;
 
   cityElement.innerHTML = cityName;
-
   temperatureElement.innerHTML = Math.round(temperature);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
@@ -58,10 +39,10 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
   if (hours < 10) {
     hours = `0${hours}`;
   }
+
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -77,10 +58,27 @@ function getForecast(city) {
     });
 }
 
+function searchCity(city) {
+  let apiKey = "1t7b4ado35ccfb0c2c30ac5eb63faeaa";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+  getForecast(city);
+}
+
+function search(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  let city = searchInputElement.value;
+  searchCity(city);
+}
+
+// Показуємо погоду в Парижі за замовчуванням
+searchCity("Paris");
+
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
-
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   response.data.daily.slice(1, 6).forEach(function (day) {
@@ -106,5 +104,4 @@ searchForm.addEventListener("submit", search);
 
 let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
-
 currentDateELement.innerHTML = formatDate(currentDate);
