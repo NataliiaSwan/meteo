@@ -3,6 +3,7 @@ function displayTemperature(response) {
   let cityName = response.data.city;
 
   let cityElement = document.querySelector("#current-city");
+
   let temperatureElement = document.querySelector("#current-temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
