@@ -1,11 +1,8 @@
 function displayTemperature(response) {
   let temperature = Math.round(response.data.temperature.current);
   let cityName = response.data.city;
-
   let cityElement = document.querySelector("#current-city");
-
   let temperatureElement = document.querySelector("#current-temperature");
-
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -77,8 +74,6 @@ function search(event) {
   let city = searchInputElement.value;
   searchCity(city);
 }
-
-// Показуємо погоду в Парижі за замовчуванням
 searchCity("Paris");
 
 function displayForecast(response) {

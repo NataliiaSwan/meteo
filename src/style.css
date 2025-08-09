@@ -88,6 +88,7 @@ main {
 .current-temperature-icon-box {
   display: flex;
 }
+
 .current-temperature-icon {
   width: 80px;
   height: 80px;
