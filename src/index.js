@@ -5,6 +5,7 @@ function displayTemperature(response) {
   let cityElement = document.querySelector("#current-city");
 
   let temperatureElement = document.querySelector("#current-temperature");
+
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -19,6 +20,9 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
+
+  let detailsElement = document.querySelector(".current-details");
+  detailsElement.style.visibility = "visible";
 }
 
 function formatDate(date) {
