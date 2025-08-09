@@ -27,8 +27,9 @@
           <input type="submit" value="Search" class="search-button" />
         </form>
       </header>
+
       <main>
-        <h1 class="current-city" id="current-city">Paris</h1>
+        <h1 class="current-city" id="current-city"></h1>
         <div class="current-weather">
           <div>
             <p class="current-details">
@@ -40,20 +41,17 @@
           </div>
 
           <div class="current-temperature-icon-box">
-            <div id="icon">
-              <img
-                class="current-temperature-icon"
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-              />
-            </div>
-
-            <span class="current-temperature-value" id="current-temperature"
-              >24</span
-            ><span class="current-temperature-unit">°C</span>
+            <div id="icon"></div>
+            <span
+              class="current-temperature-value"
+              id="current-temperature"
+            ></span>
+            <span class="current-temperature-unit">°C</span>
           </div>
         </div>
         <div class="weather-forecast" id="forecast"></div>
       </main>
+
       <footer>
         <p>
           This project was coded by
